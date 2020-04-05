@@ -3,6 +3,7 @@
 *.log
 *.pyc
 *.swp
+*.plist
 .DS_Store
 .atom/
 .buildlog/
@@ -29,6 +30,9 @@
 .pub-cache/
 .pub/
 /build/
+ios/Runner/GoogleService-Info.plist
+ios/build/
+android/app/google-services.json
 
 # Web related
 lib/generated_plugin_registrant.dart
