@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatefulWidget {
+class RootScreen extends StatefulWidget {
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _RootScreenState createState() => _RootScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _RootScreenState extends State<RootScreen> {
   bool userIsSignedIn = false;
 
-  Text _buildSplashScreen() => const Text('Already signed in!');
+  Text _buildRootScreen() => const Text('Already signed in!');
 
   Scaffold _buildLoginScreen() => Scaffold(
         body: Container(
@@ -42,5 +42,5 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) =>
-      userIsSignedIn ? _buildSplashScreen() : _buildLoginScreen();
+      userIsSignedIn ? _buildRootScreen() : _buildLoginScreen();
 }

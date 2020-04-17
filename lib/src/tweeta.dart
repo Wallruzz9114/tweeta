@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tweeta/src/screens/splash_screen.dart';
+import 'package:tweeta/src/screens/root_screen.dart';
 
 class Tweeta extends StatelessWidget {
   @override
@@ -12,6 +12,6 @@ class Tweeta extends StatelessWidget {
             primarySwatch: Colors.grey,
             cardColor: Colors.white70,
             accentColor: Colors.black),
-        home: SplashScreen(),
+        home: RootScreen(),
       );
 }
