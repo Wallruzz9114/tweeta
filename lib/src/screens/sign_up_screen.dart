@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tweeta/src/services/authentication_service.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const String id = 'sign_up_screen';
@@ -9,13 +10,14 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String _name, _email, _password;
+  final AuthenticationService _authenticationService = AuthenticationService();
+  String _username, _email, _password;
 
   void _submit() {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
       // Logging in the user w/ Firebase
-      // AuthService.signUpUser(context, _name, _email, _password);
+      _authenticationService.signUp(context, _username, _email, _password);
     }
   }
 
@@ -47,11 +49,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         vertical: 10.0,
                       ),
                       child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Name'),
+                        decoration:
+                            const InputDecoration(labelText: 'Username'),
                         validator: (String input) => input.trim().isEmpty
-                            ? 'Please enter a valid name'
+                            ? 'Please enter a valid username'
                             : null,
-                        onSaved: (String input) => _name = input,
+                        onSaved: (String input) => _username = input,
                       ),
                     ),
                     Padding(
