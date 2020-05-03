@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tweeta/src/screens/feed_screen.dart';
-import 'package:tweeta/src/screens/log_in_screen.dart';
 
 class AuthenticationService {
   final FirebaseAuth _authenticationInstance = FirebaseAuth.instance;
@@ -33,16 +32,18 @@ class AuthenticationService {
     }
   }
 
-  Future<void> signOut(BuildContext context) async {
+  Future<void> signOut() async {
     _authenticationInstance.signOut();
-    // Back to login screen
-    Navigator.pushReplacementNamed(context, LogInScreen.id);
   }
 
   Future<void> login(String email, String password) async {
-    _authenticationInstance.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+    try {
+      await _authenticationInstance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }

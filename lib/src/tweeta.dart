@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tweeta/src/screens/feed_screen.dart';
+import 'package:tweeta/src/screens/root_screen.dart';
 import 'package:tweeta/src/screens/log_in_screen.dart';
 import 'package:tweeta/src/screens/sign_up_screen.dart';
 
@@ -8,7 +9,7 @@ class Tweeta extends StatelessWidget {
   Widget _getScreen() => StreamBuilder<FirebaseUser>(
         stream: FirebaseAuth.instance.onAuthStateChanged,
         builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) =>
-            snapshot.hasData ? FeedScreen() : LogInScreen(),
+            snapshot.hasData ? RootScreen() : LogInScreen(),
       );
 
   @override
