@@ -26,28 +26,28 @@ class _RootScreenState extends State<RootScreen> {
           ),
         ),
         BottomNavigationBarItem(
-          title: Platform.isAndroid ? const Text('Home') : null,
+          title: Platform.isAndroid ? const Text('Search') : null,
           icon: Icon(
             Icons.search,
             size: 32.0,
           ),
         ),
         BottomNavigationBarItem(
-          title: Platform.isAndroid ? const Text('Home') : null,
+          title: Platform.isAndroid ? const Text('Add') : null,
           icon: Icon(
             Icons.photo_camera,
             size: 32.0,
           ),
         ),
         BottomNavigationBarItem(
-          title: Platform.isAndroid ? const Text('Home') : null,
+          title: Platform.isAndroid ? const Text('Notifications') : null,
           icon: Icon(
             Icons.notifications,
             size: 32.0,
           ),
         ),
         BottomNavigationBarItem(
-          title: Platform.isAndroid ? const Text('Home') : null,
+          title: Platform.isAndroid ? const Text('Profile') : null,
           icon: Icon(
             Icons.account_circle,
             size: 32.0,
